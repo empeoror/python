@@ -1,0 +1,15 @@
+import math
+
+while True:
+    print("D(mm), theta0(deg)=")
+    D = float(input())
+    theta0 = float(input())
+    
+    F = D / (4 * math.tan(math.radians(theta0 / 2)))
+    H = D * D / (16 * F)
+    R0 = F
+    RE = 0.5 * D / math.sin(math.radians(theta0))
+    T = 20 * math.log10(RE / R0)
+    
+    print(f"F/D, F(mm), H(mm) = {F/D}, {F}, {H}")
+    print(f"Space taper(dB) = {T}")
